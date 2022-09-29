@@ -1,11 +1,11 @@
 .app-wrapper {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 70px auto 50px;
     grid-template-areas:
-            "h h h "
-            "n   c c "
-            "f f f";
+            "h h h h"
+            "n   c c c"
+            "f f f f";
 }
 
 .header {
@@ -32,5 +32,14 @@
     margin: 5px 0 0 15px;
     width: 60px;
     border-radius: 50%;
+}
+
+.content img {
+    height: 80%;
+    width: 100%;
+}
+
+.postsContent {
+    padding: 10px 0 10px 10px;
 }
 
