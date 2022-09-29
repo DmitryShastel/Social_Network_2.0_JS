@@ -6,7 +6,7 @@ function App() {
         <div>
             <Header/>
             <Technologies/>
-            {/*<Footer/>*/}
+            <Footer/>
         </div>
     )
 }
@@ -30,5 +30,10 @@ const Technologies = () => {
     )
 }
 
+const Footer = () => {
+    return (
+        <p className = 'mainStyle'>Footer</p>
+    )
+}
 
 export default App;
