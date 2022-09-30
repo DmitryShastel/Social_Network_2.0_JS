@@ -12,21 +12,24 @@ function App() {
 
 
             <nav className='navbar'>
-                <div>
-                    <a href=''>Profile</a>
+                <div className='navContent'>
+                    <div>
+                        <a href=''>Profile</a>
+                    </div>
+                    <div>
+                        <a href=''>Message</a>
+                    </div>
+                    <div>
+                        <a href=''>News</a>
+                    </div>
+                    <div>
+                        <a href=''>Music</a>
+                    </div>
+                    <div>
+                        <a href=''>Settings</a>
+                    </div>
                 </div>
-                <div>
-                    <a href=''>Message</a>
-                </div>
-                <div>
-                    <a href=''>News</a>
-                </div>
-                <div>
-                    <a href=''>Music</a>
-                </div>
-                <div>
-                    <a href=''>Settings</a>
-                </div>
+
 
             </nav>
 
