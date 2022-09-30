@@ -10,22 +10,9 @@
 
 
 
-.navbar {
-    grid-area: n;
-    background-color: rgba(10, 12, 20, 0.5);
 
-}
 
-.navContent {
-    margin: 15px 20px;
-}
 
-a {
-    text-decoration: none;
-    font-size: 25px;
-    font-family: "Bodoni MT Poster Compressed";
-    color: yellow;
-}
 .content {
     grid-area: c;
     background-color: greenyellow;
