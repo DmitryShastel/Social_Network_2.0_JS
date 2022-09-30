@@ -8,10 +8,7 @@
             "f f f f";
 }
 
-.header {
-    grid-area: h;
-    background-color: blue;
-}
+
 
 .navbar {
     grid-area: n;
@@ -39,11 +36,7 @@ a {
     background-color: yellow;
 }
 
-.header img {
-    margin: 5px 0 0 15px;
-    width: 60px;
-    border-radius: 50%;
-}
+
 
 .content img {
     height: 80%;
