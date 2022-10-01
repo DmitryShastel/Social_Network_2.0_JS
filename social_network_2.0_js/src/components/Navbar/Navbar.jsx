@@ -6,7 +6,7 @@ export const Navbar = () => {
         <nav className={s.navbar}>
             <div className={s.navContent}>
                 <div>
-                    <a className={s.item} href=''>Profile</a>
+                    <a className={`${s.item} ${s.active}`} href=''>Profile</a>
                 </div>
                 <div>
                     <a className={s.item} href=''>Message</a>

@@ -13,3 +13,7 @@
     font-family: "Bodoni MT Poster Compressed";
     color: yellow;
 }
+
+.active {
+    color: darkturquoise;
+}
