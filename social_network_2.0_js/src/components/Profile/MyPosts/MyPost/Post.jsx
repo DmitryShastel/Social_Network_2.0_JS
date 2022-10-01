@@ -1,18 +1,17 @@
 import React from "react";
-import s from './MyPost.module.css'
+import s from './Post.module.css'
 
-export const MyPost = () => {
+export const Post = (props) => {
     return (
         <div className={s.mypost}>
             <div className={s.item}>
                 <img
                     src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP0Kl2NFoXYE4jav-CZD1y_5SKKiamvXJwDg&usqp=CAU'/>
-                post 1
+                {props.message}
             </div>
-            <div>
-                <nav>like</nav>
+            <div className={s.item}>
+                <nav>Like{props.like}</nav>
             </div>
         </div>
-
     )
 }

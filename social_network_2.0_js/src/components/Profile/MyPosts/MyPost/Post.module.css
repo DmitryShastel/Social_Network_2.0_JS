@@ -11,3 +11,8 @@
 .item {
     color: red;
 }
+
+.item nav {
+    color: deepskyblue;
+    padding: 5px;
+}
