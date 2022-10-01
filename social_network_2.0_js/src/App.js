@@ -2,8 +2,8 @@ import './App.css';
 import React from "react";
 import {Header} from "./components/Header/Header";
 import {Navbar} from "./components/Navbar/Navbar";
-import {Profile} from "./components/Profile/Profile";
 import {Footer} from "./components/Footer/Footer";
+import {Profile} from "./components/Profile/Profile";
 
 
 function App() {
