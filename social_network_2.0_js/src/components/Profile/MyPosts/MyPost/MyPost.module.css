@@ -1,0 +1,13 @@
+.mypost img {
+    width: 30px;
+    border-radius: 50%;
+}
+
+.mypost .img {
+    width: 30px;
+    border-radius: 50%;
+}
+
+.item {
+    color: red;
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import s from './MyPosts.module.css'
+import {MyPost} from "./MyPost/MyPost";
 
 export const MyPosts = () => {
     return (
@@ -10,7 +11,7 @@ export const MyPosts = () => {
                     <textarea></textarea>
                    <button>Add Post</button>
                </div>
+               <MyPost/>
            </div>
-
     )
 }
