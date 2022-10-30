@@ -11,6 +11,7 @@ function App() {
         <div className='app-wrapper'>
             <Header/>
             <Navbar/>
+            <Dialogs />
             <Profile/>
             <Footer/>
         </div>
