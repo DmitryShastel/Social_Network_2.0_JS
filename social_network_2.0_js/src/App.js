@@ -6,6 +6,7 @@ import {Footer} from "./components/Footer/Footer";
 import {Dialogs} from "./components/Dialogs/Dialogs";
 import {Profile} from "./components/Profile/Profile";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {News} from "./components/News/News";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
                         <Route path='/dialogs' element={<Dialogs/>}/>
                     </Routes>
                 </div>
+               
                 {/*<Footer/>*/}
             </div>
         </BrowserRouter>

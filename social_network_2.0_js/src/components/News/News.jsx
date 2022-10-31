@@ -1,10 +1,10 @@
 import React from "react";
 
 
-export const Dialogs = (props) => {
+export const News = (props) => {
     return (
         <div >
-            Dialogs
+            News
         </div>
     )
 }
