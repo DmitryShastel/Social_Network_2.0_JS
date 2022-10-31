@@ -8,6 +8,17 @@
             "f f f f";
 }
 
+.app-wrapper-content {
+    font-size: 20px;
+    padding: 10px 0 10px 10px;
+    grid-area: c;
+    background-color: greenyellow;
+}
+
+.app-wrapper-content img {
+    width: 100%;
+}
+
 .footer {
     grid-area: f;
     background-color: yellow;
