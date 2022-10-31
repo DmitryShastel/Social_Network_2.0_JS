@@ -3,22 +3,25 @@ import React from "react";
 import {Header} from "./components/Header/Header";
 import {Navbar} from "./components/Navbar/Navbar";
 import {Footer} from "./components/Footer/Footer";
-import {Profile} from "./components/Profile/Profile";
 import {Dialogs} from "./components/Dialogs/Dialogs";
+import {Profile} from "./components/Profile/Profile";
+import {BrowserRouter} from "react-router-dom";
 
 
 function App() {
     return (
-        <div className='app-wrapper'>
-            <Header/>
-            <Navbar/>
-            <div class='app-wrapper-content'>
-                <Dialogs/>
-                {/*<Profile/>*/}
-            </div>
+        <BrowserRouter>
+            <div className='app-wrapper'>
+                <Header/>
+                <Navbar/>
+                <div class='app-wrapper-content'>
+                    <Dialogs/>
+                    <Profile/>
+                </div>
 
-            <Footer/>
-        </div>
+                <Footer/>
+            </div>
+        </BrowserRouter>
     )
 }
 
