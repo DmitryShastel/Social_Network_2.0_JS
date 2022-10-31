@@ -6,19 +6,19 @@ export const Navbar = () => {
         <nav className={s.navbar}>
             <div className={s.navContent}>
                 <div>
-                    <a className={`${s.item} ${s.active}`} href=''>Profile</a>
+                    <a className={`${s.item} ${s.active}`} href='/profile'>Profile</a>
                 </div>
                 <div>
-                    <a className={s.item} href=''>Message</a>
+                    <a className={s.item} href='/dialogs'>Message</a>
                 </div>
                 <div>
-                    <a className={s.item} href=''>News</a>
+                    <a className={s.item} href='/news'>News</a>
                 </div>
                 <div>
-                    <a className={s.item} href=''>Music</a>
+                    <a className={s.item} href='/music'>Music</a>
                 </div>
                 <div>
-                    <a className={s.item} href=''>Settings</a>
+                    <a className={s.item} href='/settings'>Settings</a>
                 </div>
             </div>
         </nav>
