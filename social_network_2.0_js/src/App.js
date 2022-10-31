@@ -20,7 +20,7 @@ function App() {
                         <Route path='/dialogs' element={<Dialogs/>}/>
                     </Routes>
                 </div>
-                <Footer/>
+                {/*<Footer/>*/}
             </div>
         </BrowserRouter>
     )

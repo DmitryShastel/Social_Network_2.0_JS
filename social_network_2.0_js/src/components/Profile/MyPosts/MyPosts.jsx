@@ -1,9 +1,10 @@
 import React from "react";
 import {Post} from "./MyPost/Post";
+import s from './MyPosts.module.css'
 
 export const MyPosts = () => {
     return (
-           <div>
+           <div className={s.posts}>
                <div>Ava + description</div>
                <div>My posts</div>
                <div>
