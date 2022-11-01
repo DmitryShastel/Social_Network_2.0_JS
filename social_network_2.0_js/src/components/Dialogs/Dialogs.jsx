@@ -4,9 +4,9 @@ import s from'./Dialogs.module.css'
 export const Dialogs = (props) => {
     return (
         <div className={s.dialogs} >
-          <div className={s.dialogsItem}>
-              <div className={s.dialog}>
-                  Dima
+          <div className={s.dialogsItems}>
+              <div className={`${s.dialog} ${s.active}`}>
+                  Dima 
               </div>
               <div className={s.dialog}>
                   Sacha
