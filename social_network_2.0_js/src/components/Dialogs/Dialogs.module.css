@@ -4,6 +4,7 @@
 }
 
 .dialogsItems {
+    display: grid;
     padding: 10px;
 }
 
