@@ -14,6 +14,12 @@ const DialogItem = (props) => {
 
 }
 
+const Message = (props) => {
+    return(
+        <div >{props.message}</div>
+    )
+}
+
 
 export const Dialogs = (props) => {
     return (
@@ -25,9 +31,9 @@ export const Dialogs = (props) => {
             </div>
 
             <div className={s.message}>
-                <div>hi</div>
-                <div>buy</div>
-                <div>how are you</div>
+                <Message message='hi'/>
+                <Message  message='buy'/>
+                <Message message='buy now'/>
             </div>
         </div>
     )
