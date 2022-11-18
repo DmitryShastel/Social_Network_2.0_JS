@@ -8,11 +8,18 @@
     padding: 10px;
 }
 
+.item {
+    text-decoration: none;
+}
+
 .dialogsItems .active {
+    text-decoration: none;
     color: red;
 }
 
 .message {
     padding: 10px;
 }
+
+
 
