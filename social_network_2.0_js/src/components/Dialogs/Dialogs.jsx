@@ -22,6 +22,16 @@ const Message = (props) => {
 
 
 export const Dialogs = (props) => {
+
+    let dialogData = [
+        {id: 1, name: 'Dima'},
+        {id: 2, name: 'Sacha'},
+        {id: 3, name: 'Nikolas'}
+    ]
+
+
+
+
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
