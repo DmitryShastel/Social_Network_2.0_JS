@@ -31,8 +31,8 @@ export const Dialogs = (props) => {
 
     let messageData = [
         {id: 1, message: 'hi'},
-        {id: 1, message: 'hi'},
-        {id: 1, message: 'hi'}
+        {id: 2, message: 'buy'},
+        {id: 3, message: 'buy now'}
     ]
 
     return (
@@ -44,9 +44,9 @@ export const Dialogs = (props) => {
             </div>
 
             <div className={s.message}>
-                <Message message='hi'/>
-                <Message  message='buy'/>
-                <Message message='buy now'/>
+                <Message message={messageData[0].message} id={messageData[0].id}/>
+                <Message message={messageData[1].message} id={messageData[1].id}/>
+                <Message message={messageData[2].message} id={messageData[2].id}/>
             </div>
         </div>
     )
