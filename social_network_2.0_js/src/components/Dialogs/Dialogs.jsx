@@ -35,9 +35,9 @@ export const Dialogs = (props) => {
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                <DialogItem name='Dima' id='1'/>
-                <DialogItem name='Sacha' id='2'/>
-                <DialogItem name='Nikolas' id='3'/>
+                <DialogItem name={dialogData[0].name} id={dialogData[0].id}/>
+                <DialogItem name={dialogData[1].name} id={dialogData[1].id}/>
+                <DialogItem name={dialogData[2].name} id={dialogData[2].id}/>
             </div>
 
             <div className={s.message}>
