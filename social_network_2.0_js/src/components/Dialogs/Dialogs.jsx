@@ -29,8 +29,11 @@ export const Dialogs = (props) => {
         {id: 3, name: 'Nikolas'}
     ]
 
-
-
+    let messageData = [
+        {id: 1, message: 'hi'},
+        {id: 1, message: 'hi'},
+        {id: 1, message: 'hi'}
+    ]
 
     return (
         <div className={s.dialogs}>
