@@ -21,8 +21,8 @@ export const MyPosts = () => {
 
                </div>
 
-               <Post message='Hi how are you' like='  15'/>
-               <Post message='It is my first post' like='  23'/>
+               <Post id={postData[0].id} message={postData[0].message} like={postData[0].like}/>
+               <Post id={postData[1].id} message={postData[1].message} like={postData[1].like}/>
            </div>
     )
 }
