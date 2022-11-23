@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const Message = (props) => {
+export const Message = (props) => {
     return (
         <div>{props.message}</div>
     )
