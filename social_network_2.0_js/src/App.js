@@ -10,12 +10,7 @@ import {Music} from "./components/Music/Music";
 import {Settings} from "./components/Settings/Settings";
 
 
-function App() {
-
-    let posts = [
-        {id: 1, message: 'Hi how are you', like: 15},
-        {id: 2, message: 'It is my first post', like: 23}
-    ]
+function App(props) {
 
     return (
         <BrowserRouter>
@@ -24,7 +19,7 @@ function App() {
                 <Navbar/>
                 <div className='app-wrapper-content'>
                     <Routes>
-                        <Route path='/profile' element={<Profile posts={posts}/>}/>
+                        <Route path='/profile' element={<Profile posts={props.posts}/>}/>
                         <Route path='/dialogs /*' element={<Dialogs/>}/>
                         <Route path='/news' element={<News/>}/>
                         <Route path='/music' element={<Music/>}/>
