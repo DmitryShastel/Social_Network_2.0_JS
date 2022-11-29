@@ -26,7 +26,13 @@
     width: 15px;
     padding-right: 10px;
     border-radius: 50%;
+}
 
+.imgMessage{
+    height: 15px;
+    width: 15px;
+    padding-right: 10px;
+    border-radius: 50%;
 }
 
 
