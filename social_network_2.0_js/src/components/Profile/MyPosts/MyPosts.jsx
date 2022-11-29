@@ -4,7 +4,7 @@ import s from './MyPosts.module.css'
 
 export const MyPosts = (props) => {
 
-    let postElements = props.state.posts.map(p => <Post id={p.id} message={p.message} like={p.like}/>)
+    let postElements = props.posts.map(p => <Post id={p.id} message={p.message} like={p.like}/>)
 
     return (
         <div className={s.posts}>
