@@ -6,6 +6,10 @@ export const MyPosts = (props) => {
 
     let postElements = props.posts.map(p => <Post id={p.id} message={p.message} like={p.like}/>)
 
+    let addPost = () => {
+        alert('hello')
+    }
+
     return (
         <div className={s.posts}>
             <div>Ava + description</div>
@@ -13,7 +17,7 @@ export const MyPosts = (props) => {
             <div>
                 <textarea></textarea>
                 <div className={s.button}>
-                    <button onClick={() => {alert('hello')}}>Add Post</button>
+                    <button onClick={addPost}>Add Post</button>
                 </div>
 
             </div>
