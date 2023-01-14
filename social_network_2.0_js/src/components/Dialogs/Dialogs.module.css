@@ -35,5 +35,13 @@
     border-radius: 50%;
 }
 
+.dialogs button {
+    background-color: yellow;
+    padding: 5px;
+    margin-left: 10px;
+    border: cornflowerblue solid 1.5px;
+    border-radius: 5%;
+}
+
 
 

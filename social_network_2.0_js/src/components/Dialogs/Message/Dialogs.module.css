@@ -20,6 +20,9 @@
 .message {
     padding: 10px;
 }
-
+.button{
+    background-color: yellow;
+    margin-bottom: 15px;
+}
 
 

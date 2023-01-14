@@ -7,7 +7,7 @@ export const MyPosts = (props) => {
     let postElements = props.posts.map(p => <Post id={p.id} message={p.message} like={p.like}/>)
 
     let newPostElement = React.createRef()
-    
+
     let addPost = () => {
         let text = newPostElement.current.value
         alert(text)
