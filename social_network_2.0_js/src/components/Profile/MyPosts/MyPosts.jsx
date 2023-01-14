@@ -16,7 +16,7 @@ export const MyPosts = (props) => {
             <div>Ava + description</div>
             <h3>My posts</h3>
             <div>
-                <textarea id='tx'></textarea>
+                <textarea ref={newPostElement}></textarea>
                 <div className={s.button}>
                     <button onClick={addPost}>Add Post</button>
                 </div>
