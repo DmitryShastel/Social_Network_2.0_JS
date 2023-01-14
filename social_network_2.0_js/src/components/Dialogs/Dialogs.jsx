@@ -19,8 +19,8 @@ export const Dialogs = (props) => {
                 {messageElements}
             </div>
             <div>
-                <textarea ></textarea>
-                <button>Add Message</button>
+                <textarea></textarea>
+                <button onClick={() => {alert('hello')}}>Add Message</button>
             </div>
 
         </div>
