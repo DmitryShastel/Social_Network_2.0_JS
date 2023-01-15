@@ -14,6 +14,7 @@ export const Dialogs = (props) => {
     let addMessage = () => {
         let message = newMessageElement.current.value
         alert(message)
+        newMessageElement.current.value = ''
     }
 
     return (

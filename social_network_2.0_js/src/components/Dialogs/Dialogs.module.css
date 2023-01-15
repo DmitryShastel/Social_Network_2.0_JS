@@ -57,8 +57,29 @@
 
 .dialogs textarea {
     margin-left: 10px;
+    margin-bottom: 5px;
+    padding: 0px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 14px;
+    resize: none;
+    outline: none;
+    font-family: 'Heebo', sans-serif;
+    line-height: 1.5;
 }
 
+.dialogs textarea:hover {
+    cursor: pointer;
+    background-color: #eeeeee;
+}
 
+.dialogs textarea:focus {
+    cursor: text;
+    background-color: white;
+    border-color: #747dd2;
+    transition: all 0.7s;
+}
 
 
