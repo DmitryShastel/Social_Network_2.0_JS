@@ -15,7 +15,7 @@ export const MyPosts = (props) => {
     }
 
     let onPostChange = () => {
-
+        props.newPostText()
     }
 
     return (
