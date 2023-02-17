@@ -14,6 +14,10 @@ export const MyPosts = (props) => {
         newPostElement.current.value = '';
     }
 
+    let onPostChange = () => {
+
+    }
+
     return (
         <div className={s.posts}>
             <div>Ava + description</div>
@@ -22,6 +26,7 @@ export const MyPosts = (props) => {
                 <textarea
                     ref={newPostElement}
                     value={props.newPostText}
+                    onChange={onPostChange}
                 />
                 <div className={s.button}>
                     <button onClick={addPost}>Add Post</button>
