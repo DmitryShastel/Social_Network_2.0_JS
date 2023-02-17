@@ -19,7 +19,10 @@ export const MyPosts = (props) => {
             <div>Ava + description</div>
             <h3>My posts</h3>
             <div>
-                <textarea ref={newPostElement}></textarea>
+                <textarea
+                    ref={newPostElement}
+                    value={props.newPostText}
+                />
                 <div className={s.button}>
                     <button onClick={addPost}>Add Post</button>
                 </div>
