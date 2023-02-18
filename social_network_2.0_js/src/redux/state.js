@@ -1,4 +1,6 @@
-import {renderEntireTree} from "../render";
+let renderEntireTree = () => {
+
+}
 
 export let state = {
     profilePage: {
@@ -23,14 +25,17 @@ export let state = {
     }
 }
 
-export let addPost = () => {
+export const addPost = () => {
     let newPost = {id: 5, message: state.profilePage.newPostText, like: 0}
     state.profilePage.posts.push(newPost)
     state.profilePage.newPostText = ''
     renderEntireTree(state)
 }
-
-export let updateNewPost = (newText) => {
+export const updateNewPost = (newText) => {
     state.profilePage.newPostText = newText
     renderEntireTree(state)
+}
+
+export const subscriber = (observer) => {
+    renderEntireTree = observer
 }
