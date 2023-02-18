@@ -1,6 +1,5 @@
-let renderEntireTree = () => {
 
-}
+let renderEntireTree = () => {}
 
 export let state = {
     profilePage: {
@@ -35,7 +34,6 @@ export const updateNewPost = (newText) => {
     state.profilePage.newPostText = newText
     renderEntireTree(state)
 }
-
 export const subscriber = (observer) => {
     renderEntireTree = observer
 }
