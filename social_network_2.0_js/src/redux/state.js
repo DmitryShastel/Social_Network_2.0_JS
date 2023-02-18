@@ -1,4 +1,4 @@
-let store = {
+export let store = {
     _state: {
         profilePage: {
             posts: [
@@ -21,12 +21,29 @@ let store = {
             ]
         }
     },
-    renderEntireTree() {},
+    getState() {
+        return this._state
+    },
+    _callSubscribe() {
+    },
+    addPost() {
+        let newPost = {id: 5, message: state.profilePage.newPostText, like: 0}
+        state.profilePage.posts.push(newPost)
+        state.profilePage.newPostText = ''
+        renderEntireTree(state)
+    },
+    updateNewPost(newText) {
+        state.profilePage.newPostText = newText
+        renderEntireTree(state)
+    },
+    subscriber(observer) {
+        renderEntireTree = observer
+    }
 }
 
 
-let renderEntireTree = () => {}
-
+let renderEntireTree = () => {
+}
 export let state = {
     profilePage: {
         posts: [
@@ -49,7 +66,6 @@ export let state = {
         ]
     }
 }
-
 export const addPost = () => {
     let newPost = {id: 5, message: state.profilePage.newPostText, like: 0}
     state.profilePage.posts.push(newPost)
