@@ -24,8 +24,13 @@ export let store = {
     getState() {
         return this._state;
     },
+
     _callSubscriber() {
     },
+    _subscribe(observer) {
+        this._callSubscriber = observer
+    },
+
     addPost() {
         let newPost = {id: 5, message: this._state.profilePage.newPostText, like: 0}
         this._state.profilePage.posts.push(newPost)
@@ -36,7 +41,13 @@ export let store = {
         this._state.profilePage.newPostText = newText
         this._callSubscriber(this._state)
     },
-    subscribe(observer) {
-        this._callSubscriber = observer
+
+    dispatch(action) {
+        if(action.type === 'ADD-POST'){
+            let newPost = {id: 5, message: this._state.profilePage.newPostText, like: 0}
+            this._state.profilePage.posts.push(newPost)
+            this._state.profilePage.newPostText = ''
+            this._callSubscriber(this._state)
+        }
     }
 }
