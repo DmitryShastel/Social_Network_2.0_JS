@@ -27,7 +27,7 @@ export let store = {
 
     _callSubscriber() {
     },
-    _subscribe(observer) {
+    subscribe(observer) {
         this._callSubscriber = observer
     },
 
