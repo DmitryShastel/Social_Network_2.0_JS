@@ -20,8 +20,3 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 renderEntireTree(store.getState())
 store.subscribe(renderEntireTree)
-
-
-
-
-
