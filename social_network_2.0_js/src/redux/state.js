@@ -48,8 +48,8 @@ export let store = {
             this._callSubscriber(this._state)
         }
         else if (action.type === SEND_MESSAGE) {
-            let newMessage = {id: 4, message: this._state.dialogsPage.newMessageBody}
-            this._state.dialogsPage.message.push(newMessage)
+            let body =  this._state.dialogsPage.newMessageBody
+            this._state.dialogsPage.message.push({id: 4, message: body})
             this._state.dialogsPage.newMessageBody = ''
             this._callSubscriber(this._state)
         } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
@@ -72,14 +72,14 @@ export const updateNewPostActionCreator = (text) => {
     }
 }
 
-export const addMessageActionCreator = () => {
+export const sendMessageActionCreator = () => {
     return {
         type: SEND_MESSAGE
     }
 }
-export const updateNewMessageActionCreator = (newMessage) => {
+export const updateNewMessageBodyActionCreator = (body) => {
     return {
         type: UPDATE_NEW_MESSAGE_BODY,
-        newMessage: newMessage
+        body: body
     }
 }
