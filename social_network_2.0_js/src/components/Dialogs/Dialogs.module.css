@@ -14,10 +14,10 @@
 
 .dialogsItems .active {
     text-decoration: none;
-    color: red;
+    color: orangered;
 }
 
-.message {
+.messages {
     padding: 10px;
 }
 
