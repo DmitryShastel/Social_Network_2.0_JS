@@ -1,5 +1,7 @@
 const ADD_POST = 'ADD-POST'
 const UPDATE_NEW_POST = 'UPDATE-NEW-POST'
+const ADD_MESSAGE = 'ADD-MESSAGE'
+const UPDATE_NEW_MESSAGE = 'UPDATE-NEW-MESSAGE'
 
 export let store = {
     _state: {
@@ -21,7 +23,8 @@ export let store = {
                 {id: 1, message: 'hi'},
                 {id: 2, message: 'buy'},
                 {id: 3, message: 'buy now'}
-            ]
+            ],
+            newMessageText: ''
         }
     },
     getState() {
@@ -44,6 +47,15 @@ export let store = {
             this._state.profilePage.newPostText = action.newText
             this._callSubscriber(this._state)
         }
+        else if (action.type === ADD_MESSAGE) {
+            let newMessage = {id: 4, message: this._state.dialogsPage.newMessageText}
+            this._state.dialogsPage.message.push(newMessage)
+            this._state.dialogsPage.newMessageText = ''
+            this._callSubscriber(this._state)
+        } else if (action.type === UPDATE_NEW_MESSAGE) {
+            this._state.dialogsPage.newMessageText = action.newMessage
+            this._callSubscriber(this._state)
+        }
     }
 }
 
@@ -57,5 +69,17 @@ export const updateNewPostActionCreator = (text) => {
     return {
         type: UPDATE_NEW_POST,
         newText: text
+    }
+}
+
+export const addMessageActionCreator = () => {
+    return {
+        type: ADD_MESSAGE
+    }
+}
+export const updateNewMessageActionCreator = (newMessage) => {
+    return {
+        type: UPDATE_NEW_MESSAGE,
+        newMessage: newMessage
     }
 }
