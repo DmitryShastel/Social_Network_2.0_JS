@@ -12,7 +12,7 @@ export const Dialogs = (props) => {
 
     let newMessageElement = React.createRef()
 
-    let addMessage = () => {
+    let onSendMessageClick = () => {
         props.dispatch(sendMessageActionCreator())
 
         // let message = newMessageElement.current.value
@@ -20,7 +20,7 @@ export const Dialogs = (props) => {
          newMessageElement.current.value = ''
     }
 
-    let onMessageChange = () => {
+    let onNewMessageChange = () => {
         let newMessage = newMessageElement.current.value
         props.dispatch(updateNewMessageBodyActionCreator(newMessage))
 
@@ -38,10 +38,10 @@ export const Dialogs = (props) => {
             <div>
                 <textarea
                     ref={newMessageElement}
-                    value={props.newMessageText}
-                    onChange={onMessageChange}
+                    value={props.newMessageBody}
+                    onChange={onNewMessageChange}
                 />
-                <button onClick={addMessage}>Add Message</button>
+                <button onClick={onSendMessageClick}>Add Message</button>
             </div>
 
         </div>
