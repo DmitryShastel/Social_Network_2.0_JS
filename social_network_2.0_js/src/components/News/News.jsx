@@ -4,7 +4,6 @@ import {addNewActionCreator, updateNewActionCreator} from "../../redux/news-redu
 
 
 export const News = (props) => {
-    debugger
     let state = props.store.getState().news
     let newElements = state.news.map(n => <div>{n.new}</div>)
     let newElement = React.createRef()

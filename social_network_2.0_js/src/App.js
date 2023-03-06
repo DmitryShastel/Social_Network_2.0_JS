@@ -12,9 +12,8 @@ import {Settings} from "./components/Settings/Settings";
 
 
 function App(props) {
-    debugger
 
-    return (
+        return (
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
@@ -32,6 +31,7 @@ function App(props) {
                         />}/>
 
                         <Route path='/news' element={<News
+                            store={props.store}
                             news={props.state.news}
                             dispatch={props.dispatch}
                         />}/>

@@ -12,7 +12,6 @@ let initialState = {
 }
 
 export const newsReducer = (state = initialState, action) => {
-    debugger
     switch (action.type) {
         case ADD_NEW:
             let newNew = {id: new Date().getTime(), new: state.newNewText}
