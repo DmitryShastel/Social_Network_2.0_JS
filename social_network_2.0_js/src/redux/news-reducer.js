@@ -31,7 +31,6 @@ export const addNewActionCreator = () => {
         type: ADD_NEW
     }
 }
-
 export const updateNewActionCreator = (text) => {
     return {
         type: UPDATE_NEW,

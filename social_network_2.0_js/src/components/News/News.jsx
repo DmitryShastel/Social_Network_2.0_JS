@@ -13,8 +13,9 @@ export const News = (props) => {
         props.dispatch(addNewActionCreator())
     }
 
-    let onChangeNew = () => {
-        let text = newElement.current.value
+    let onChangeNew = (e) => {
+        //let text = newElement.current.value
+        let text = e.target.value
         props.dispatch(updateNewActionCreator(text))
     }
 
