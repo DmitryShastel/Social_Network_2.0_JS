@@ -5,10 +5,10 @@ import {addNewActionCreator, updateNewActionCreator} from "../../redux/news-redu
 
 export const News = (props) => {
     debugger
-    // let state = props.store.getState().news
-    let newElements = props.state.news.map(n => <div>{n.new}</div>)
+    let state = props.store.getState().news
+    let newElements = state.news.map(n => <div>{n.new}</div>)
     let newElement = React.createRef()
-    let newNewText = props.state.newNewText
+    let newNewText = state.newNewText
 
     let addNew = () => {
         props.dispatch(addNewActionCreator())
