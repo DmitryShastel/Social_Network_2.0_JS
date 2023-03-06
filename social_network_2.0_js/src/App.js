@@ -8,10 +8,11 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {News} from "./components/News/News";
 import {Music} from "./components/Music/Music";
 import {Settings} from "./components/Settings/Settings";
-import {updateNewPost} from "./redux/state";
+
 
 
 function App(props) {
+    debugger
 
     return (
         <BrowserRouter>
@@ -30,7 +31,10 @@ function App(props) {
                             store={props.store}
                         />}/>
 
-                        <Route path='/news' element={<News/>}/>
+                        <Route path='/news' element={<News
+                            news={props.state.news}
+                            dispatch={props.dispatch}
+                        />}/>
                         <Route path='/music' element={<Music/>}/>
                         <Route path='/settings' element={<Settings/>}/>
                     </Routes>
