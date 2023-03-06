@@ -32,15 +32,12 @@ function App(props) {
 
                         <Route path='/news' element={<News
                             store={props.store}
-                            news={props.state.news}
                             dispatch={props.dispatch}
                         />}/>
                         <Route path='/music' element={<Music/>}/>
                         <Route path='/settings' element={<Settings/>}/>
                     </Routes>
                 </div>
-
-                {/*<Footer/>*/}
             </div>
         </BrowserRouter>
     )
