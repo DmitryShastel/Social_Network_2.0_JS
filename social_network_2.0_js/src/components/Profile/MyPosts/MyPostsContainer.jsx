@@ -19,6 +19,6 @@ export const MyPosts = (props) => {
     }
 
     return (
-        <MyPosts/>
+        <MyPosts updateNewPostText={onPostChange}/>
     )
 }
