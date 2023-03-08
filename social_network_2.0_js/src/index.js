@@ -4,7 +4,6 @@ import {store} from "./redux/redux-store";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 
-
 let renderEntireTree = (state) => {
     root.render(
         <React.StrictMode>
