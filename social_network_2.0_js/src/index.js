@@ -6,7 +6,6 @@ import App from "./App";
 
 
 let renderEntireTree = (state) => {
-    debugger
     root.render(
         <React.StrictMode>
             <App
