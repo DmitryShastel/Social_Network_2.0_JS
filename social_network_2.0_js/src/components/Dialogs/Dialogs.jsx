@@ -6,19 +6,19 @@ import {Message} from "./Message/Message";
 
 export const Dialogs = (props) => {
 
-    let state = props.store.getState().dialogsPage
+    let state = props.dialogsPage
     let dialogElements = state.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>)
     let messageElements = state.message.map(m => <Message message={m.message} id={m.id}/>)
     let newMessageBody = state.newMessageBody
 
 
     let onSendMessageClick = () => {
-        props.onSendMessageClick()
+        props.sendMessage()
     }
 
     let onNewMessageChange = (e) => {
         let body = e.target.value
-        props.onNewMessageChange(body)
+        props.updateNewMessageBody(body)
     }
 
     return (
