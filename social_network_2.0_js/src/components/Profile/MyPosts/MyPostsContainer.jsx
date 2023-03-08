@@ -10,7 +10,6 @@ export const MyPosts = (props) => {
 
     let addPost = () => {
         props.dispatch(addPostActionCreator())
-
     }
 
     let onPostChange = () => {
@@ -19,6 +18,6 @@ export const MyPosts = (props) => {
     }
 
     return (
-        <MyPosts updateNewPostText={onPostChange}/>
+        <MyPosts updateNewPostText={onPostChange} addPost={addPost}/>
     )
 }
