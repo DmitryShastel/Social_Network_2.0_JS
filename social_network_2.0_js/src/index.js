@@ -5,12 +5,13 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import {StoreContext} from "./components/StoreContext";
 
+
 let renderEntireTree = (state) => {
     root.render(
         <React.StrictMode>
-            <StoreContext value={store}>
+            <StoreContext.Provider value={store}>
                 <App/>
-            </StoreContext>
+            </StoreContext.Provider>
 
         </React.StrictMode>
     );
