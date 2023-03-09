@@ -3,15 +3,15 @@ import './index.css';
 import {store} from "./redux/redux-store";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import {StoreContext} from "./components/StoreContext";
 
 let renderEntireTree = (state) => {
     root.render(
         <React.StrictMode>
-            <App
-                state={state}
-                dispatch={store.dispatch.bind(store)}
-                store={store}
-            />
+            <StoreContext value={store}>
+                <App/>
+            </StoreContext>
+
         </React.StrictMode>
     );
 }
