@@ -12,7 +12,7 @@ import {DialogsContainer} from "./components/Dialogs/DialogsContainer";
 
 function App(props) {
 
-        return (
+    return (
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>

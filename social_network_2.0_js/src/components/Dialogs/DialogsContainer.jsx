@@ -6,19 +6,18 @@ import {StoreContext} from "../StoreContext";
 
 export const DialogsContainer = (props) => {
 
-
     return <StoreContext.Consumer>{
 
         (store) => {
 
-            let state = props.store.getState().dialogsPage
+            let state = store.getState().dialogsPage
 
             let onSendMessageClick = () => {
-                props.store.dispatch(sendMessageActionCreator())
+                store.dispatch(sendMessageActionCreator())
             }
 
             let onNewMessageChange = (body) => {
-                props.store.dispatch(updateNewMessageBodyActionCreator(body))
+                store.dispatch(updateNewMessageBodyActionCreator(body))
             }
 
             return <Dialogs
@@ -28,6 +27,5 @@ export const DialogsContainer = (props) => {
             />
         }}
     </StoreContext.Consumer>
-
 }
 

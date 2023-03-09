@@ -1,3 +1,3 @@
 import React from "react";
 
-export const StoreContext = React.storeContext(null)
+export const StoreContext = React.createContext(null)
