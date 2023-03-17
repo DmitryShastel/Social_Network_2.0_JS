@@ -6,10 +6,10 @@ import App from "./App";
 import {Provider} from "react-redux";
 
 
-let renderEntireTree = (state) => {
+let renderEntireTree = () => {
     root.render(
         <React.StrictMode>
-            <Provider value={store}>
+            <Provider store={store}>
                 <App/>
             </Provider>
 
