@@ -30,12 +30,21 @@ export const DialogsContainer = (props) => {
     </StoreContext.Consumer>
 }
 
-let f1 = () => {
-    return {}
+let mapStateToProps = (state) => {
+    return {
+        dialogsPage: state.dialogsPage
+    }
 }
 
-let f2 = () => {
-    return {}
+let mapDispatchToProps = (dispatch) => {
+    return {
+        sendMessage: () => {
+            dispatch(sendMessageActionCreator())
+        },
+        updateNewMessageBody: (body) => {
+            dispatch(updateNewMessageBodyActionCreator(body))
+        }
+    }
 }
 
-let SuperDialogsContainer = connect(f1, f2)(Dialogs);
+let SuperDialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
