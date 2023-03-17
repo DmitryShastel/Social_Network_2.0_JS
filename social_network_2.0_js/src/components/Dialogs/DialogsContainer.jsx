@@ -2,6 +2,7 @@ import React from "react";
 import {sendMessageActionCreator, updateNewMessageBodyActionCreator} from "../../redux/dialogs-reducer";
 import {Dialogs} from "./Dialogs";
 import {StoreContext} from "../StoreContext";
+import {connect} from "react-redux";
 
 
 export const DialogsContainer = (props) => {
@@ -29,3 +30,12 @@ export const DialogsContainer = (props) => {
     </StoreContext.Consumer>
 }
 
+let f1 = () => {
+    return {}
+}
+
+let f2 = () => {
+    return {}
+}
+
+let SuperDialogsContainer = connect(f1, f2)(Dialogs);
