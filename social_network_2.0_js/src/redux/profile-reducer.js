@@ -3,12 +3,12 @@ const UPDATE_NEW_POST = 'UPDATE-NEW-POST'
 
 
 let initialState = {
-        posts: [
-            {id: 1, message: 'Hi how are you', like: 15},
-            {id: 2, message: 'It is my first post', like: 23}
-        ],
-        newPostText: ''
-    }
+    posts: [
+        {id: 1, message: 'Hi how are you', like: 15},
+        {id: 2, message: 'It is my first post', like: 23}
+    ],
+    newPostText: ''
+}
 
 export const profileReducer = (state = initialState, action) => {
 
@@ -17,10 +17,10 @@ export const profileReducer = (state = initialState, action) => {
             let newPost = {id: 5, message: state.newPostText, like: 0}
             state.posts.push(newPost)
             state.newPostText = ''
-            return {...state, posts: [...state.posts], newPostText: state.newPostText};
+            return {...state}
         case UPDATE_NEW_POST:
             state.newPostText = action.newText
-            return {...state, posts: [...state.posts], newPostText: state.newPostText};
+            return {...state};
         default:
             return {...state}
     }
