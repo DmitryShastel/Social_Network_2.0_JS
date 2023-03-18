@@ -16,9 +16,10 @@ export const profileReducer = (state = initialState, action) => {
         case ADD_POST:{
             let newPost = {id: 5, message: state.newPostText, like: 0}
             let stateCopy = {...state}
-            state.posts.push(newPost)
-            state.newPostText = ''
-            return {...state}
+            stateCopy.posts = [...state.posts]
+            stateCopy.posts.push(newPost)
+            stateCopy.newPostText = '';
+            return stateCopy
         }
 
         case UPDATE_NEW_POST:
