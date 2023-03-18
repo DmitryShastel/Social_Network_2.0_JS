@@ -43,7 +43,7 @@ let mapDispatchToProps = (dispatch) => {
             dispatch(action)
 
         },
-        onPostChange: () => {
+        addPost: () => {
             dispatch(addPostActionCreator())
         }
     }
