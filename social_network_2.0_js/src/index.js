@@ -15,34 +15,3 @@ ReactDOM.render(
     document.getElementById('root')
 );
 
-
-// ReactDOM.render(<Provider  store = {store}>
-//             <App/>
-//         </Provider>,
-//
-//     document.getElementById('root')
-// );
-
-
-// let renderEntireTree = () => {
-//     root.render(
-//         <React.StrictMode>
-//             <Provider store={store}>
-//                 <App/>
-//             </Provider>
-//
-//         </React.StrictMode>
-//     );
-// }
-// const root = ReactDOM.createRoot(document.getElementById('root')
-
-// renderEntireTree(store.getState())
-// store.subscribe(() => {
-//     let state = store.getState()
-//     renderEntireTree(state)
-// })
-
-// renderEntireTree();
-// store.subscribe(() => {
-//     renderEntireTree()
-// })

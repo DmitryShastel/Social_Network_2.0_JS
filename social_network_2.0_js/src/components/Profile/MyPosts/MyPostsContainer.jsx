@@ -23,4 +23,4 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-export let MyPostsContainer = connect(mapStateToProps,mapDispatchToProps)(MyPosts);
+export let MyPostsContainer = connect(mapStateToProps, mapDispatchToProps)(MyPosts);
