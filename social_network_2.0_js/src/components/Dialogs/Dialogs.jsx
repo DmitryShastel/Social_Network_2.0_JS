@@ -8,7 +8,7 @@ export const Dialogs = (props) => {
 
     let state = props.dialogsPage
     let dialogElements = state.dialogs.map(d => <DialogItem key={d.id} name={d.name} id={d.id}/>)
-    let messageElements = state.message.map(m => <Message key={m.id} message={m.message} id={m.id}/>)
+    let messageElements = state.messages.map(m => <Message key={m.id} message={m.message} id={m.id}/>)
     let newMessageBody = state.newMessageBody
 
 
