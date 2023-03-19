@@ -33,9 +33,7 @@ export const dialogsReducer = (state = initialState, action) => {
         }
 
         case UPDATE_NEW_MESSAGE_BODY: {
-            let stateCopy = {...state}
-
-            stateCopy.newMessageBody = action.body
+            stateCopy = {...state, newMessageBody: action.body}
             return stateCopy;
         }
 
