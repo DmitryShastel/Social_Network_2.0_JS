@@ -19,12 +19,7 @@ let initialState = {
 
 export const dialogsReducer = (state = initialState, action) => {
 
-    // let stateCopy = {
-    //     ...state,
-    //     dialogs: [...state.dialogs],
-    //     message: [...state.message],
-    //     // newMessageBody: ...state.newMessageBody
-    // }
+    let stateCopy;
 
 
     switch (action.type) {
