@@ -3,9 +3,9 @@ import {connect} from "react-redux";
 import {Users} from "./Users";
 
 
-let mapStateToProps = () => {
+let mapStateToProps = (state) => {
     return {
-
+        usersPage: state.usersPage
     }
 }
 
@@ -15,4 +15,4 @@ let mapDispatchToProps = () => {
     }
 }
 
-export const UsersContainer = connect()(Users);
+export const UsersContainer = connect(mapStateToProps,mapDispatchToProps)(Users);

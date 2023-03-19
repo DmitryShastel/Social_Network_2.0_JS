@@ -1,49 +1,62 @@
-const SEND_MESSAGE = 'ADD-MESSAGE'
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY'
+const FOLLOW = 'FOLLOW'
+const UNFOLLOW = 'UNFOLLOW'
+const SET_USERS = 'SET_USERS'
 
 
 let initialState = {
-    dialogs: [
-        {id: 1, name: 'Dima'},
-        {id: 2, name: 'Sacha'},
-        {id: 3, name: 'Nikolas'}
-    ],
-
-    messages: [
-        {id: 1, message: 'hi'},
-        {id: 2, message: 'buy'},
-        {id: 3, message: 'buy now'}
-    ],
-    newMessageBody: ''
+   users: [
+       {
+           id: 1,
+           photoUrl: 'https://image.stern.de/31693958/t/O6/v6/w1440/r1.7778/-/star-wars-schurke-was-wurde-aus-darth-maul.jpg',
+           followed: true,
+           fullName: 'Dima',
+           status: 'I am the boss',
+           location: {city: 'Minsk', country: 'Belarus'}
+       },
+       {
+           id: 2,
+           photoUrl: 'https://image.stern.de/31693958/t/O6/v6/w1440/r1.7778/-/star-wars-schurke-was-wurde-aus-darth-maul.jpg',
+           followed: false,
+           fullName: 'Vasa',
+           status: 'I am the boss too',
+           location: {city: 'Moscow', country: 'Russia'}
+       }
+   ]
 }
 
 export const usersReducer = (state = initialState, action) => {
 
     switch (action.type) {
-        case UPDATE_NEW_MESSAGE_BODY:
+        case FOLLOW:
             return {
-                ...state, newMessageBody: action.body
+                ...state
             }
 
-        case SEND_MESSAGE:
-            let body = state.newMessageBody
+        case UNFOLLOW:
 
             return {
-                ...state, newMessageBody: '', messages: [...state.messages, {id: 8, message: body}]
+                ...state
             };
         default:
             return state
     }
 }
 
-export const sendMessageActionCreator = () => {
+export const followAC = (userId) => {
     return {
-        type: SEND_MESSAGE
+        type: FOLLOW,
+        userId
     }
 }
-export const updateNewMessageBodyActionCreator = (body) => {
+export const unfollowAC = (userId) => {
     return {
-        type: UPDATE_NEW_MESSAGE_BODY,
-        body: body
+        type: UNFOLLOW,
+        userId
+    }
+}
+export const setUsersAC = (users) => {
+    return {
+        type: SET_USERS,
+        users
     }
 }
