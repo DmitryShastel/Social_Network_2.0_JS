@@ -19,17 +19,15 @@ function App(props) {
                 <Navbar/>
                 <div className='app-wrapper-content'>
                     <Routes>
-
                         <Route path='/profile' element={<Profile/>}/>
-
                         <Route path='/dialogs/*' element={<DialogsContainer/>}/>
-
                         <Route path='/news' element={<News
                             store={props.store}
                             dispatch={props.dispatch}
                         />}/>
                         <Route path='/music' element={<Music/>}/>
                         <Route path='/settings' element={<Settings/>}/>
+                        <Route path='/users' element={<Settings/>}/>
                     </Routes>
                 </div>
             </div>
