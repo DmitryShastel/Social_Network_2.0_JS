@@ -12,6 +12,18 @@ export const Users = (props) => {
                     <button>Follow</button>
                 </div>
 
+                <span>
+                   <span>
+                       <div>{u.fullName}</div>
+                       <div>{u.status}</div>
+                   </span>
+
+                    <span>
+                        <div></div>
+                       <div></div>
+                    </span>
+                </span>
+
             </div>)}
         </div>
     )
