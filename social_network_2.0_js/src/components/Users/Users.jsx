@@ -1,4 +1,5 @@
 import React from "react";
+import s from './Users.module.css'
 
 export const Users = (props) => {
 
@@ -26,13 +27,11 @@ export const Users = (props) => {
     }
 
 
-
-
     return (
         <div>
             {props.users.map(u => <div key={u.id}>
                   <span>
-                    <div><img src={u.photoUrl}/></div>
+                    <div><img src={u.photoUrl} className={s.photo}/></div>
                 </span>
 
                 <div>
