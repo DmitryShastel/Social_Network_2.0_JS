@@ -5,7 +5,7 @@ import {Users} from "./Users";
 
 let mapStateToProps = (state) => {
     return {
-        usersPage: state.usersPage
+        usersPage: state.usersPage.users
     }
 }
 
