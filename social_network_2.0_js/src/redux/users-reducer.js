@@ -4,16 +4,7 @@ const SET_USERS = 'SET_USERS'
 
 
 let initialState = {
-    users: [
-        // {
-        //     id: 1,
-        //     photoUrl: 'https://image.stern.de/31693958/t/O6/v6/w1440/r1.7778/-/star-wars-schurke-was-wurde-aus-darth-maul.jpg',
-        //     followed: true,
-        //     fullName: 'Dima',
-        //     status: 'I am the boss',
-        //     location: {city: 'Minsk', country: 'Belarus'}
-        // }
-    ]
+    users: []
 }
 
 export const usersReducer = (state = initialState, action) => {
@@ -22,20 +13,14 @@ export const usersReducer = (state = initialState, action) => {
         case FOLLOW:
             return {
                 ...state, users: state.users.map(u => {
-                    if (u.id === action.userId) {
-                        return {...u, followed: true}
-                    }
-                    return u;
+                   return action.id === u.id ? {...u, followed: true} : u
                 })
             }
 
         case UNFOLLOW:
             return {
                 ...state, users: state.users.map(u => {
-                    if (u.id === action.userId) {
-                        return {...u, followed: false}
-                    }
-                    return u;
+                    return action.id === u.id ? {...u, followed: false} : u
                 })
             }
         case SET_USERS:

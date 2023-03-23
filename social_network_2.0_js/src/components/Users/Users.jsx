@@ -1,14 +1,14 @@
 import React from "react";
 import s from './Users.module.css'
 
-export const Users = (props) => {
+export let Users = (props) => {
 
-    if(props.setUsers.length === 0) {
+    if(props.users.length === 0) {
         props.setUsers(
             [
                 {
                     id: 1,
-                    photoUrl: 'https://image.stern.de/31693958/t/O6/v6/w1440/r1.7778/-/star-wars-schurke-was-wurde-aus-darth-maul.jpg',
+                    photoUrl: 'https://2.bp.blogspot.com/-w1KcztzMZTQ/VnXQHtY39GI/AAAAAAAAYQM/iB_PhFgDW9Y/s1600/bane.jpg',
                     followed: true,
                     fullName: 'Dima',
                     status: 'I am the boss',
@@ -22,6 +22,7 @@ export const Users = (props) => {
                     status: 'I am the boss too',
                     location: {city: 'Moscow', country: 'Russia'}
                 }
+
             ]
         )
     }
