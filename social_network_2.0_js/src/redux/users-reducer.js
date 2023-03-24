@@ -26,14 +26,19 @@ let initialState = {
 
 export const usersReducer = (state = initialState, action) => {
 
-   switch (action.type) {
-       case FOLLOW:
-           let stateCopy = {
-               ...state,
-               //users: [...state.users]
-               users: state.users.map(u => u)
-           }
-   }
+    switch (action.type) {
+        case FOLLOW:
+            let stateCopy = {
+                ...state,
+                //users: [...state.users]
+                users: state.users.map(u => {
+                    if (u.id === action.usersId) {
+                        return {...u, followed: true}
+                    }
+                    return u
+                })
+            }
+    }
 }
 
 export const followAC = (usersId) => {
