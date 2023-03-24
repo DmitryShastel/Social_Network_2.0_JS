@@ -3,7 +3,7 @@ import s from './Users.module.css'
 
 export let Users = (props) => {
 
-    // if(props.usersPage.users.length === 0) {
+    // if(props.users.users.length === 0) {
     //     props.setUsers([
     //             {
     //                 id: 1,
@@ -29,36 +29,58 @@ export let Users = (props) => {
 
     return (
         <div>
-            {props.users.map(u => <div key={u.id}>
-                  <span>
-                    <div><img src={u.photoUrl} className={s.photo}/></div>
-                </span>
-
-                <div>
-                    {
-                        u.followed
-                            ? <button onClick={()=> {props.follow(u.id)}}>Follow</button>
-                            : <button onClick={() => {props.unfollow(u.id)}}>Unfollow</button>
-                    }
-
-                </div>
-
+            {
+                props.users.map(u => <div key={u.id}>
                 <span>
-                   <span>
-                       <div>{u.fullName}</div>
-                       <div>{u.status}</div>
-                   </span>
-
+                    <div>
+                        <img src={u.photoUrl} className={s.photo} className={s.photo}/>
+                    </div>
+                    <div>
+                 {
+                     u.followed
+                     ? <button onClick={() => {props.unfollow(u.id)}}>Unfollow</button>
+                     : <button onClick={() => {props.follow(u.id)}}>Follow</button>}
+                    </div>
+                </span>
                     <span>
+                    <span>
+                         <div>{u.fullName}</div>
+                        <div>{u.status}</div>
+                    </span>
+                    <span>
+                        <div>{u.location.country}</div>
                         <div>{u.location.city}</div>
-                       <div>{u.location.country}</div>
                     </span>
                 </span>
-
-            </div>)}
-
-            {/*{ <div>{props.users.fullName[1]} </div>}*/}
+                </div>)}
         </div>
     )
 }
 
+// {props.users.map(u => <div key={u.id}>
+//                   <span>
+//                     <div><img src={u.photoUrl} className={s.photo}/></div>
+//                 </span>
+//
+//     <div>
+//         {
+//             u.followed
+//                 ? <button onClick={()=> {props.follow(u.id)}}>Follow</button>
+//                 : <button onClick={() => {props.unfollow(u.id)}}>Unfollow</button>
+//         }
+//
+//     </div>
+//
+//     <span>
+//                    <span>
+//                        <div>{u.fullName}</div>
+//                        <div>{u.status}</div>
+//                    </span>
+//
+//                     <span>
+//                         <div>{u.location.city}</div>
+//                        <div>{u.location.country}</div>
+//                     </span>
+//                 </span>
+//
+// </div>)}
