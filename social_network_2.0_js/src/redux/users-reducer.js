@@ -26,44 +26,53 @@ let initialState = {
 
 export const usersReducer = (state = initialState, action) => {
 
-    switch (action.type) {
-        case FOLLOW:
-            return {
-                ...state, users: state.users.map(u => {
-                    return u.id === action.usersId ? {...u, followed: true} : u
-                })
-            }
-
-        case UNFOLLOW:
-            return {
-                ...state, users: state.users.map(u => {
-                    return u.id === action.usersId ? {...u, followed: false} : u
-                })
-            }
-        case SET_USERS:
-            return {
-                ...state, users: [...state.users, ...action.users]
-            }
-        default:
-            return state
-    }
+   switch (action.type) {
+       case FOLLOW:
+           let stateCopy = {
+               ...state,
+               //users: [...state.users]
+               users: state.users.map(u => u)
+           }
+   }
 }
 
 export const followAC = (usersId) => {
     return {
-        type: 'FOLLOW',
+        type: FOLLOW,
         usersId
     }
 }
 export const unfollowAC = (usersId) => {
     return {
-        type: 'UNFOLLOW',
+        type: UNFOLLOW,
         usersId
     }
 }
 export const setUsersAC = (users) => {
     return {
-        type: 'SET_USERS',
+        type: SET_USERS,
         users
     }
 }
+
+// switch (action.type) {
+//     case FOLLOW:
+//         return {
+//             ...state, users: state.users.map(u => {
+//                 return u.id === action.usersId ? {...u, followed: true} : u
+//             })
+//         }
+//
+//     case UNFOLLOW:
+//         return {
+//             ...state, users: state.users.map(u => {
+//                 return u.id === action.usersId ? {...u, followed: false} : u
+//             })
+//         }
+//     case SET_USERS:
+//         return {
+//             ...state, users: [...state.users, ...action.users]
+//         }
+//     default:
+//         return state
+// }
