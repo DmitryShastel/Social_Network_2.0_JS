@@ -11,3 +11,8 @@
 button {
     margin-bottom: 10px;
 }
+
+.selectedPage {
+    color: #3a7999;
+    font-weight: bold;
+}
