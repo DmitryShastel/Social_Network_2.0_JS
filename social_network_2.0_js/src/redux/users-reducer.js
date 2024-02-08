@@ -76,7 +76,6 @@ export const setCurrentPageAC = (currentPage) => {
         currentPage
     }
 }
-
 export const setTotalUserCountAC = (totalUsersCount) => {
     return {
         type: SET_TOTAL_USERS_COUNT,
