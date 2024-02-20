@@ -13,3 +13,5 @@ export let reducers = combineReducers({
 
 export let store = createStore(reducers)
 
+window.store = store
+
