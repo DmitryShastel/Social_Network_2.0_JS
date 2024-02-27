@@ -1,10 +1,8 @@
 import React from "react";
-import s from './ProfileInfo.module.css'
 import {Preloader} from "../../Common/Preloader/Preloader";
 
 
 export const ProfileInfo = (props) => {
-
 
     if (!props.profile) {
         return <Preloader/>
@@ -17,7 +15,7 @@ export const ProfileInfo = (props) => {
                     src='https://www.planetware.com/wpimages/2022/01/world-most-beautiful-islands-st-lucia-caribbean.jpg'/>
             </div>
             <div>
-                <img src={props.profile.photos.large}/>
+                <img src={props.profile.photos.large || props.profile.photos}/>
             </div>
 
         </div>

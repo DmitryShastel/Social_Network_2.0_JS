@@ -10,7 +10,6 @@ import {
     unfollow
 } from "../../redux/users-reducer";
 import axios from "axios";
-import preloader from '../../assets/image/icons8-loading-50.png'
 import {Preloader} from "../Common/Preloader/Preloader";
 
 
