@@ -2,6 +2,7 @@ import React from "react";
 import s from './Users.module.css'
 import userPhoto from '../../assets/image/userPhoto.png'
 import {NavLink} from "react-router-dom";
+import axios from "axios";
 
 
 export const Users = (props) => {
@@ -38,23 +39,47 @@ export const Users = (props) => {
                  {
                      u.followed
                          ? <button onClick={() => {
-                             props.unfollow(u.id)
+                             axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
+                                 {
+                                     withCredentials: true,
+                                     headers: {
+                                         'API-KEY': '9f9da7ee-2def-4ec9-bde3-f37a343d34bd'
+                                     },
+                                 })
+                                 .then(res => {
+                                     if (res.data.resultCode === 0) {
+                                         props.unfollow(u.id)
+                                     }
+                                 })
                          }}>Unfollow</button>
+
                          : <button onClick={() => {
-                             props.follow(u.id)
+                             axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {},
+                                 {
+                                     withCredentials: true,
+                                     headers: {
+                                         'API-KEY': '9f9da7ee-2def-4ec9-bde3-f37a343d34bd'
+                                     },
+                                 })
+                                 .then(res => {
+                                     if (res.data.resultCode === 0) {
+                                         props.follow(u.id)
+                                     }
+                                 })
                          }}>Follow</button>}
-                    </div>
-                </span>
+
+                        </div>
+                        </span>
                     <span>
-                    <span>
-                         <div>{u.name}</div>
+                        <span>
+                        <div>{u.name}</div>
                         <div>{u.status}</div>
-                    </span>
-                    <span>
+                        </span>
+                        <span>
                         <div>{'u.location.country'}</div>
                         <div>{'u.location.city'}</div>
-                    </span>
-                </span>
+                        </span>
+                        </span>
                 </div>)}
         </div>
     )
