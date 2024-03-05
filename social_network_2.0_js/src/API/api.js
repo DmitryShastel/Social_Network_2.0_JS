@@ -14,16 +14,19 @@ export const usersAPI = {
         ).then(res => res.data)
     },
     follow(id) {
-        return instance.post(`follow/${id}` )
+        return instance.post(`follow/${id}`)
             .then(res => res.data)
     },
     unFollow(id) {
         return instance.delete(`follow/${id}`)
             .then(res => res.data)
     },
-    authMe(){
+    authMe() {
         return instance.get(`auth/me`)
             .then(res => res.data)
+    },
+    getUserProfile(profileId) {
+        return instance.get(`profile/` + profileId).then(res => res.data)
     },
 }
 
