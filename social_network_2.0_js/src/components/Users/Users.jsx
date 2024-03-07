@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import s from './Users.module.css'
 import userPhoto from '../../assets/image/userPhoto.png'
 import {NavLink} from "react-router-dom";
@@ -14,9 +14,14 @@ export const Users = (props) => {
     }
 
 
+    const [followingInProgress, setFollowingInProgress] = useState([]);
+
     const handleFollow = (id) => {
+        setFollowingInProgress([...followingInProgress, id]);
+        // props.toggleFollowingProgress(true, id)
         usersAPI.follow(id).then(data => {
-            debugger
+            setFollowingInProgress(followingInProgress.filter(userId => userId !== id));
+            // props.toggleFollowingProgress(false, id)
             if (data.resultCode === 0) {
                 props.follow(id);
             }
@@ -24,12 +29,17 @@ export const Users = (props) => {
     };
 
     const handleUnfollow = (id) => {
+        setFollowingInProgress([...followingInProgress, id]);
+        // props.toggleFollowingProgress(true, id)
         usersAPI.unFollow(id).then(data => {
+            setFollowingInProgress(followingInProgress.filter(userId => userId !== id));
+            // props.toggleFollowingProgress(false, id)
             if (data.resultCode === 0) {
                 props.unfollow(id);
             }
         });
     };
+
 
     return (
         <div className={s.wrapper}>
@@ -56,11 +66,15 @@ export const Users = (props) => {
                      <div>
               {u.followed ? (
                   <button
+                      //disabled={props.followingInProgress.some(id => id === u.id)}
+                      disabled={followingInProgress.includes(u.id)}
                       onClick={() => handleUnfollow(u.id)}>
                       Unfollow
                   </button>
               ) : (
                   <button
+                      //disabled={props.followingInProgress.some(id => id === u.id)}
+                      disabled={followingInProgress.includes(u.id)}
                       onClick={() => handleFollow(u.id)}>
                       Follow
                   </button>
@@ -82,65 +96,3 @@ export const Users = (props) => {
         </div>
     )
 }
-
-
-// <div>
-//
-//
-// {
-//         u.followed
-//             ? <button onClick={() => {
-//                 usersAPI.follow(u.id).then(res => {
-//                     if (res.data.resultCode === 0) {
-//                         props.unfollow(u.id)
-//                     }
-//                 })
-//             }}>Unfollow</button>
-//
-//             : <button onClick={() => {
-//                 usersAPI.unFollow(u.id).then(res => {
-//                     if (res.data.resultCode === 0) {
-//                         props.unfollow(u.id)
-//                     }
-//                 })
-//                     .then(res => {
-//                         if (res.data.resultCode === 0) {
-//                             props.follow(u.id)
-//                         }
-//                     })
-//             }}>Follow</button>}
-//
-//
-//     {/*{*/}
-//     {/*    u.followed*/}
-//     {/*        ? <button onClick={() => {*/}
-//     {/*            axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,*/}
-//     {/*                {*/}
-//     {/*                    withCredentials: true,*/}
-//     {/*                    headers: {*/}
-//     {/*                        'API-KEY': '9f9da7ee-2def-4ec9-bde3-f37a343d34bd'*/}
-//     {/*                    },*/}
-//     {/*                })*/}
-//     {/*                .then(res => {*/}
-//     {/*                    if (res.data.resultCode === 0) {*/}
-//     {/*                        props.unfollow(u.id)*/}
-//     {/*                    }*/}
-//     {/*                })*/}
-//     {/*        }}>Unfollow</button>*/}
-//
-//     {/*        : <button onClick={() => {*/}
-//     {/*            axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {},*/}
-//     {/*                {*/}
-//     {/*                    withCredentials: true,*/}
-//     {/*                    headers: {*/}
-//     {/*                        'API-KEY': '9f9da7ee-2def-4ec9-bde3-f37a343d34bd'*/}
-//     {/*                    },*/}
-//     {/*                })*/}
-//     {/*                .then(res => {*/}
-//     {/*                    if (res.data.resultCode === 0) {*/}
-//     {/*                        props.follow(u.id)*/}
-//     {/*                    }*/}
-//     {/*                })*/}
-//     {/*        }}>Follow</button>}*/}
-//
-// </div>
