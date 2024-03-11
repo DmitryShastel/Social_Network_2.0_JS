@@ -2,8 +2,7 @@ import React from "react";
 import {Profile} from "./Profile";
 import {connect} from "react-redux";
 import {useLocation, useNavigate, useParams} from "react-router-dom";
-import {setUserProfileActionCreator} from "../../redux/profile-reducer";
-import {usersAPI} from "../../API/api";
+import {getUserProfile} from "../../redux/profile-reducer";
 
 
 function withRouter(Component) {
@@ -26,14 +25,11 @@ function withRouter(Component) {
 class ProfileContainer extends React.Component {
 
     componentDidMount() {
-        let profileId = this.props.router.params.profileId;
-        if (!profileId) {
-            profileId = 10
+        let userId = this.props.router.params.profileId;
+        if (!userId) {
+            userId = 10
         }
-        usersAPI.getUserProfile(profileId)
-            .then(data => {
-                this.props.setUserProfileActionCreator(data)
-            })
+        this.props.getUserProfile(userId)
     }
 
     render() {
@@ -52,4 +48,4 @@ class ProfileContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => ({profile: state.profilePage.profile})
-export default connect(mapStateToProps, {setUserProfileActionCreator})(withRouter(ProfileContainer))
+export default connect(mapStateToProps, {getUserProfile})(withRouter(ProfileContainer))

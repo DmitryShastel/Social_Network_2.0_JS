@@ -1,3 +1,5 @@
+import {authMe} from "../API/api";
+
 const SET_USER_DATA = 'SET_USER_DATA'
 
 
@@ -33,5 +35,16 @@ export const setAuthUserData = (id, email, login) => {
             login
         }
     }
+}
+
+//thunks
+export const getAuthMeUserData = () => (dispatch) => {
+    authMe.me()
+        .then(data => {
+            if (data.resultCode === 0) {
+                let {id, email, login} = data.data;
+                dispatch(setAuthUserData(id, email, login));
+            }
+        })
 }
 

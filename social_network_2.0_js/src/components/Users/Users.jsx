@@ -21,7 +21,7 @@ export const Users = (props) => {
         props.unfollow(id)
     };
 
-    
+
     return (
         <div className={s.wrapper}>
             <div>
