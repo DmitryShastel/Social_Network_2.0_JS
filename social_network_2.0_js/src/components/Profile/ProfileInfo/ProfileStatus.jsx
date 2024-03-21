@@ -3,7 +3,8 @@ import React from 'react';
 export class ProfileStatus extends React.Component {
 
     state = {
-        editMode: false
+        editMode: false,
+        status: this.props.status,
     }
 
     activeEditMode = () => {
@@ -16,6 +17,12 @@ export class ProfileStatus extends React.Component {
         this.setState({
             editMode: false
         })
+        this.props.updateStatus(this.state.status)
+    }
+    onChangeStatus = (e) => {
+        this.setState({
+            status: e.currentTarget.value
+        })
     }
 
     render() {
@@ -23,12 +30,15 @@ export class ProfileStatus extends React.Component {
             <>
                 <div>
                     {!this.state.editMode &&
-                        <span onDoubleClick={this.activeEditMode}>{this.props.status}</span>}
+                        <span onDoubleClick={this.activeEditMode}>{this.props.status || '----'}</span>}
                 </div>
                 <div>
-                    {this.state.editMode && <input
-                        autoFocus={true}
-                        onBlur={this.deactiveEditMode.bind(this)} value={this.props.status}/>}
+                    {this.state.editMode &&
+                        <input
+                            onChange={this.onChangeStatus}
+                            autoFocus={true}
+                            onBlur={this.deactiveEditMode}
+                            value={this.state.status}/>}
                 </div>
             </>
         );
